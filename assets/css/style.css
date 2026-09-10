@@ -86,8 +86,10 @@ a {
   justify-content: center;
   padding: 14px 35px;
   border-radius: 35px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
+  letter-spacing: 0.5px;
+  line-height: 1;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: none;
@@ -604,11 +606,11 @@ a {
 }
 
 .about-heading {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
   margin-bottom: 25px;
   text-align: left;
-  white-space: nowrap;
 }
 
 .about-heading .gradient-text {
@@ -626,8 +628,8 @@ a {
 }
 
 .about-text {
-  font-size: 1.15rem;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.6;
   color: var(--text-muted);
   font-weight: 400;
   margin: 0;
@@ -698,12 +700,11 @@ a {
 }
 
 .speaker-heading {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 700;
   margin-bottom: 20px;
   text-align: left;
-  line-height: 1.1;
-  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .speaker-heading .white-text {
@@ -717,17 +718,19 @@ a {
 }
 
 .speaker-name {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 800;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
   color: white;
   margin-top: 15px;
   margin-bottom: 10px;
 }
 
 .speaker-title {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
   color: white;
+  font-weight: 400;
   margin-bottom: 30px;
 }
 
@@ -775,9 +778,10 @@ a {
 }
 
 .speaker-details .detail-label {
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
   letter-spacing: 1px;
+  line-height: 1.4;
   background: linear-gradient(90deg, #b026ff, #e71c9a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -785,9 +789,10 @@ a {
 }
 
 .speaker-details .detail-value {
-  font-size: 0.95rem;
+  font-size: 16px;
   color: white;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 .speaker-image-wrapper {
@@ -852,11 +857,11 @@ a {
 }
 
 .highlights-heading {
-  font-size: clamp(3rem, 5vw, 4rem);
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 700;
   margin-bottom: 50px;
   text-align: left;
-  line-height: 1.1;
+  line-height: 1.2;
   margin-top: 20px;
 }
 
@@ -901,9 +906,10 @@ a {
 }
 
 .highlight-text {
-  font-size: 1.15rem;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
   color: #cdd1e4;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -928,11 +934,11 @@ a {
 }
 
 .event-details-heading {
-  font-size: clamp(3rem, 5vw, 4rem);
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 700;
   margin-bottom: 60px;
   text-align: center;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .event-details-heading .white-text {
@@ -1022,18 +1028,19 @@ a {
 }
 
 .event-label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1.4;
   color: var(--text-muted);
   text-transform: uppercase;
 }
 
 .event-value {
-  font-size: 1.25rem;
+  font-size: 18px;
   color: white;
-  line-height: 1.5;
-  font-weight: 500;
+  line-height: 1.4;
+  font-weight: 600;
 }
 
 /* Partner Section */
@@ -1063,11 +1070,11 @@ a {
 }
 
 .partner-heading {
-  font-size: clamp(3rem, 5vw, 4rem);
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 700;
   margin-bottom: 40px;
   text-align: left;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .partner-heading .white-text {
@@ -1122,16 +1129,18 @@ a {
 }
 
 .partner-card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
   color: white;
   margin-bottom: 15px;
 }
 
 .partner-card-text {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
   color: var(--text-muted);
+  font-weight: 400;
   margin: 0;
 }
 
@@ -1158,11 +1167,11 @@ a {
 }
 
 .sponsorship-heading {
-  font-size: clamp(2.5rem, 4vw, 3rem);
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 700;
   margin-bottom: 30px;
   text-align: left;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .sponsorship-heading .white-text {
@@ -1290,22 +1299,25 @@ a {
 }
 
 .tier-title {
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
   margin: 0;
   letter-spacing: 1px;
 }
 
 .tier-subtitle {
-  font-size: 0.9rem;
+  font-size: 14px;
   color: var(--text-white);
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 1.4;
   margin: 0;
 }
 
 .tier-price {
-  font-size: 2.2rem;
+  font-size: 34px;
   font-weight: 800;
+  line-height: 1.1;
   color: white;
   margin-bottom: 15px;
   font-family: var(--font-heading);
@@ -1331,9 +1343,9 @@ a {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 0.95rem;
+  font-size: 16px;
   color: #e0e0e0;
-  line-height: 1.4;
+  line-height: 1.6;
   font-weight: 400;
 }
 
@@ -1373,11 +1385,11 @@ a {
 }
 
 .benefits-heading {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 700;
   margin-bottom: 50px;
   text-align: left;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .benefits-heading .white-text {
@@ -1455,11 +1467,11 @@ a {
 }
 
 .benefit-label {
-  font-size: 0.9rem;
+  font-size: 18px;
   color: #cdd1e4;
-  line-height: 1.5;
+  line-height: 1.3;
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* =============================================
@@ -1516,10 +1528,10 @@ a {
 
 /* Heading */
 .sponsorship-contact-heading {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 700;
   margin-bottom: 16px;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .sponsorship-contact-heading .white-text {
@@ -1547,10 +1559,10 @@ a {
   display: flex;
   align-items: center;
   gap: 18px;
-  font-size: 0.95rem;
+  font-size: 16px;
   color: #cdd1e4;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.5;
   letter-spacing: 0.2px;
 }
 
@@ -1603,8 +1615,8 @@ a {
 
 /* Body text */
 .sponsorship-body-text {
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.65;
   color: rgba(205, 209, 228, 0.9);
   margin: 0 0 12px 0;
   font-weight: 400;
@@ -1634,9 +1646,10 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.88rem;
+  font-size: 13px;
   color: #cdd1e4;
   font-weight: 400;
+  line-height: 1.5;
 }
 
 .pill-item i {
@@ -1648,17 +1661,13 @@ a {
 
 .pill-divider {
   color: rgba(255, 255, 255, 0.15);
-  font-size: 1rem;
-  font-weight: 300;
-  user-select: none;
+  font-size: 0.85rem;
 }
 
 /* CTA Button */
 .sponsorship-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 48px;
+  align-self: flex-start;
+  padding: 14px 32px;
   font-size: 15px;
   font-weight: 600;
   border-radius: 50px;
@@ -1827,19 +1836,21 @@ a {
 }
 
 .footer-initiative {
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: 1px;
+  line-height: 1.4;
   color: #cdd1e4;
   text-transform: uppercase;
 }
 
 .footer-description {
-  font-size: 0.88rem;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 1.5;
   color: #9aa0be;
   margin: 0 0 28px 0;
   max-width: 460px;
+  font-weight: 400;
 }
 
 /* Social Icons */
@@ -1878,8 +1889,9 @@ a {
 
 /* Titles and Accent Line */
 .footer-title {
-  font-size: 1.15rem;
+  font-size: 22px;
   font-weight: 600;
+  line-height: 1.3;
   color: white;
   margin: 0 0 8px 0;
 }
@@ -1903,7 +1915,7 @@ a {
 }
 
 .footer-links-list li a {
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #aeb4d2;
   display: inline-flex;
   align-items: center;
@@ -1942,8 +1954,9 @@ a {
   display: flex;
   align-items: center;
   gap: 14px;
-  font-size: 0.88rem;
+  font-size: 14px;
   color: #cdd1e4;
+  font-weight: 400;
 }
 
 .footer-contact-item a {
@@ -1977,10 +1990,11 @@ a {
 
 /* Column 4: Newsletter */
 .newsletter-text {
-  font-size: 0.88rem;
+  font-size: 14px;
   line-height: 1.5;
   color: #9aa0be;
   margin: 0 0 20px 0;
+  font-weight: 400;
 }
 
 .newsletter-form {
@@ -2008,7 +2022,7 @@ a {
   border: none;
   outline: none;
   color: white;
-  font-size: 0.85rem;
+  font-size: 14px;
   width: 100%;
   font-family: var(--font-body);
 }
@@ -2053,8 +2067,10 @@ a {
 
 .footer-bottom p {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: 13px;
   color: #7b82a6;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 /* Responsive Footer */
@@ -2222,5 +2238,177 @@ a {
 
   .nav-links {
     top: 65px;
+  }
+}
+
+/* =============================================
+   Responsive Typography System (Tablet 768px - 1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+  /* Section H2: 32–36px (34px), weight 700, line-height 1.2 */
+  .about-heading,
+  .speaker-heading,
+  .highlights-heading,
+  .event-details-heading,
+  .partner-heading,
+  .sponsorship-heading,
+  .benefits-heading,
+  .sponsorship-contact-heading {
+    font-size: 34px !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Section H3: 18–20px (19px), weight 600, line-height 1.3 */
+  .speaker-name,
+  .partner-card-title,
+  .tier-title,
+  .benefit-label,
+  .footer-title {
+    font-size: 19px !important;
+    line-height: 1.3 !important;
+    font-weight: 600 !important;
+  }
+
+  /* Section H4: 12px, weight 600, letter-spacing +1px, line-height 1.4 */
+  .speaker-details .detail-label,
+  .event-label,
+  .footer-initiative {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* Body / Paragraphs: 15–16px (15px), weight 400, line-height 1.6-1.7 */
+  .speaker-title,
+  .speaker-details .detail-value,
+  .highlight-text,
+  .partner-card-text,
+  .tier-features li,
+  .sponsorship-contact-item,
+  .sponsorship-body-text {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+  }
+
+  /* Large Body / Intro: 16–17px (16px), weight 400, line-height 1.6 */
+  .about-text {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+  }
+
+  /* Price Highlight: 28–30px (28px), weight 800, line-height 1.1 */
+  .tier-price {
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+    font-weight: 800 !important;
+  }
+
+  /* Captions / Fine Print: 12–13px (12.5px), weight 400, line-height 1.5 */
+  .pill-item,
+  .footer-description,
+  .footer-links-list li a,
+  .footer-contact-item,
+  .newsletter-text,
+  .footer-bottom p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+  }
+
+  /* Buttons: 15px, weight 600 */
+  .btn,
+  .sponsorship-cta {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+  }
+}
+
+/* =============================================
+   Responsive Typography System (Mobile < 768px)
+   ============================================= */
+@media (max-width: 768px) {
+  /* Section H2: 26–28px (28px), weight 700, line-height 1.2 */
+  .about-heading,
+  .speaker-heading,
+  .highlights-heading,
+  .event-details-heading,
+  .partner-heading,
+  .sponsorship-heading,
+  .benefits-heading,
+  .sponsorship-contact-heading {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Section H3: 17–18px (18px), weight 600, line-height 1.3 */
+  .speaker-name,
+  .partner-card-title,
+  .tier-title,
+  .benefit-label,
+  .footer-title {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+    font-weight: 600 !important;
+  }
+
+  /* Section H4: 11–12px (12px), weight 600, letter-spacing +1px, line-height 1.4 */
+  .speaker-details .detail-label,
+  .event-label,
+  .footer-initiative {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* Body / Paragraphs: 14–15px (14.5px), weight 400, line-height 1.6-1.7 */
+  .speaker-title,
+  .speaker-details .detail-value,
+  .highlight-text,
+  .partner-card-text,
+  .tier-features li,
+  .sponsorship-contact-item,
+  .sponsorship-body-text {
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+  }
+
+  /* Large Body / Intro: 15–16px (15px), weight 400, line-height 1.6 */
+  .about-text {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+  }
+
+  /* Price Highlight: 24–26px (24px), weight 800, line-height 1.1 */
+  .tier-price {
+    font-size: 24px !important;
+    line-height: 1.1 !important;
+    font-weight: 800 !important;
+  }
+
+  /* Captions / Fine Print: 12px, weight 400, line-height 1.5 */
+  .pill-item,
+  .footer-description,
+  .footer-links-list li a,
+  .footer-contact-item,
+  .newsletter-text,
+  .footer-bottom p {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+  }
+
+  /* Buttons: 14–15px (14.5px), weight 600 */
+  .btn,
+  .sponsorship-cta {
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
   }
 }
