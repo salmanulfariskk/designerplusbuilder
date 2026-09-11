@@ -415,7 +415,7 @@ a {
   flex: 1;
   position: absolute;
   right: -50px;
-  bottom: 95px;
+  bottom: 0;
   display: flex;
   justify-content: flex-end;
   height: 90vh;
