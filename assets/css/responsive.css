@@ -1,0 +1,1550 @@
+/* ==========================================================================
+   DE TOX - Architect as a Brand
+   Professional Responsive Stylesheet
+   Targets: Tablets, Mobiles, and Small Screens (<= 1024px, <= 768px, <= 480px, <= 360px)
+   Laptop and Desktop screens (> 1024px) remain 100% UNTOUCHED
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TABLET BREAKPOINT (max-width: 1024px)
+   Covers iPad Pro, iPad Air, Galaxy Tabs, Surface, and landscape tablets
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+
+  /* Global Guards - clip prevents horizontal scroll without breaking scroll containers */
+  html {
+    width: 100% !important;
+    overflow-x: clip !important;
+  }
+
+  body {
+    width: 100% !important;
+    overflow-x: clip !important;
+    position: relative;
+  }
+
+  /* Section Scroll Margin for Sticky/Fixed Header Offset */
+  section[id],
+  div[id].hero-wrapper,
+  .about-section,
+  .speaker-section,
+  .highlights-section,
+  .event-details-section,
+  .partner-section,
+  .sponsorship-section,
+  .benefits-section,
+  .for-sponsorship-section {
+    scroll-margin-top: 86px !important;
+  }
+
+  /* --- Sticky/Fixed Site Header & Navbar on Tablet --- */
+  .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background: rgba(3, 4, 12, 0.9) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+  }
+
+  .site-header.scrolled {
+    background: rgba(3, 4, 12, 0.96) !important;
+    border-bottom: 1px solid rgba(71, 75, 255, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+  }
+
+  .site-header .navbar {
+    padding: 12px 28px !important;
+    max-width: 100% !important;
+  }
+
+  .nav-logos {
+    gap: 14px !important;
+  }
+
+  .nav-logos img {
+    height: 44px !important;
+  }
+
+  .nav-logos .detox-logo {
+    height: 52px !important;
+  }
+
+  .divider {
+    height: 32px !important;
+  }
+
+  .nav-right {
+    gap: 16px !important;
+  }
+
+  .nav-right .nav-btn {
+    padding: 8px 18px !important;
+    font-size: 13px !important;
+  }
+
+  /* Mobile Toggle Button */
+  .nav-toggle {
+    display: flex !important;
+    z-index: 1002;
+  }
+
+  /* Sliding Navigation Drawer */
+  .nav-links {
+    position: fixed !important;
+    top: 76px !important;
+    left: 0 !important;
+    width: 100% !important;
+    max-height: calc(100vh - 76px) !important;
+    overflow-y: auto !important;
+    background: rgba(3, 4, 14, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 28px 24px calc(36px + env(safe-area-inset-bottom, 0px)) 24px !important;
+    gap: 14px !important;
+    border-bottom: 1px solid rgba(71, 75, 255, 0.3) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85) !important;
+    transform: translateY(-130%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+    z-index: 999 !important;
+  }
+
+  .nav-links.open {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block !important;
+    font-size: 16px !important;
+    padding: 10px 16px !important;
+    color: #cdd1e4 !important;
+    border-radius: 8px !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+  }
+
+  .nav-links li a::after {
+    display: none !important;
+  }
+
+  /* --- Hero Section --- */
+  .hero-wrapper {
+    /* Accounts for fixed header height (76px) + comfortable spacing */
+    padding: calc(76px + 24px) 32px 50px 32px !important;
+    min-height: auto !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .hero-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 28px !important;
+    width: 100% !important;
+  }
+
+  .hero-text {
+    max-width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .k-initiative {
+    justify-content: center !important;
+    font-size: 11px !important;
+    margin-bottom: 18px !important;
+    letter-spacing: 1.2px !important;
+  }
+
+  .hero-logos {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 18px !important;
+    margin-bottom: 22px !important;
+    max-width: 100% !important;
+  }
+
+  .hero-logos img {
+    height: 52px !important;
+  }
+
+  .hero-logos .detox-logo {
+    height: 64px !important;
+  }
+
+  .hero-logos .divider {
+    height: 36px !important;
+  }
+
+  .main-heading {
+    font-size: clamp(3rem, 6.5vw, 4.8rem) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 16px !important;
+    text-align: center !important;
+  }
+
+  .main-heading .gradient-text {
+    font-size: clamp(2.4rem, 5.2vw, 3.8rem) !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    margin-top: 0 !important;
+    text-align: center !important;
+  }
+
+  .sub-heading {
+    font-size: clamp(1.4rem, 3.2vw, 2.2rem) !important;
+    letter-spacing: 1.5px !important;
+    margin-bottom: 18px !important;
+    text-align: center !important;
+  }
+
+  .tagline {
+    font-size: clamp(1.1rem, 2.4vw, 1.4rem) !important;
+    margin: 0 0 20px 0 !important;
+    text-align: center !important;
+  }
+
+  /* Hero Image on Tablet */
+  .hero-image {
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    height: auto !important;
+    max-height: 440px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 10px 0 20px 0 !important;
+  }
+
+  .person-img {
+    max-height: 400px !important;
+    width: auto !important;
+    object-position: center bottom !important;
+  }
+
+  .image-glow {
+    width: 320px !important;
+    height: 320px !important;
+    filter: blur(50px) !important;
+  }
+
+  .neon-light {
+    opacity: 0.25 !important;
+    transform: scale(0.6) rotate(30deg) !important;
+  }
+
+  .neon-blue {
+    right: 5% !important;
+    top: -50px !important;
+  }
+
+  .neon-pink {
+    left: 5% !important;
+    bottom: -50px !important;
+  }
+
+  /* Info Bar */
+  .event-summary-section {
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .info-bar {
+    padding: 22px 24px !important;
+    gap: 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .info-item {
+    gap: 14px !important;
+  }
+
+  .info-item i {
+    font-size: 2.2rem !important;
+    margin-right: 8px !important;
+  }
+
+  .info-text .label {
+    font-size: 12px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .info-text .value {
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+  }
+
+  .info-text .bold-white {
+    font-size: 15px !important;
+  }
+
+  .hero-ctas {
+    margin-top: 24px !important;
+    gap: 18px !important;
+    justify-content: center !important;
+  }
+
+  /* --- About Section --- */
+  .about-section {
+    padding: 70px 32px !important;
+    margin: 40px auto 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .about-glow {
+    width: 340px !important;
+    height: 340px !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .about-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 36px !important;
+  }
+
+  .about-content {
+    max-width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .about-heading {
+    text-align: center !important;
+    margin-bottom: 18px !important;
+  }
+
+  .about-text {
+    text-align: center !important;
+    max-width: 720px !important;
+  }
+
+  .about-image-wrapper {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .about-image {
+    max-width: 520px !important;
+    width: 100% !important;
+    border-top-left-radius: 40px !important;
+    border-radius: 24px !important;
+  }
+
+  /* --- Keynote Speaker Section --- */
+  .speaker-section {
+    padding: 60px 32px !important;
+    margin: 50px 0 0 !important;
+    overflow: hidden !important;
+  }
+
+  .speaker-container {
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    gap: 40px !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .speaker-content {
+    max-width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .speaker-heading {
+    text-align: center !important;
+    margin-bottom: 16px !important;
+  }
+
+  .speaker-name {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .speaker-title {
+    text-align: center !important;
+    margin-bottom: 24px !important;
+  }
+
+  .speaker-details {
+    width: 100% !important;
+    max-width: 540px !important;
+    gap: 20px !important;
+  }
+
+  .speaker-details .detail-item {
+    text-align: left !important;
+    gap: 16px !important;
+  }
+
+  .speaker-image-wrapper {
+    position: relative !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .speaker-glow-bg {
+    width: 270px !important;
+    height: 270px !important;
+    right: 50% !important;
+    transform: translate(50%, -50%) !important;
+  }
+
+  .speaker-image {
+    max-width: 260px !important;
+  }
+
+  /* --- Highlights Section --- */
+  .highlights-section {
+    padding: 60px 32px !important;
+    min-height: auto !important;
+    background-position: center !important;
+    overflow: hidden !important;
+  }
+
+  .highlights-container {
+    max-width: 100% !important;
+  }
+
+  .highlights-content {
+    max-width: 100% !important;
+  }
+
+  .highlights-heading {
+    margin-top: 0 !important;
+    margin-bottom: 32px !important;
+  }
+
+  .highlights-list {
+    gap: 28px !important;
+  }
+
+  .highlight-item {
+    gap: 20px !important;
+  }
+
+  .highlight-icon {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 1.5rem !important;
+  }
+
+  /* --- Event Details Section --- */
+  .event-details-section {
+    padding: 60px 32px !important;
+    margin: 30px auto !important;
+  }
+
+  .event-details-heading {
+    margin-bottom: 36px !important;
+  }
+
+  .event-cards {
+    gap: 20px !important;
+    justify-content: center !important;
+  }
+
+  .event-card {
+    min-width: 220px !important;
+    flex: 1 !important;
+    padding: 32px 20px !important;
+  }
+
+  .event-card-icon {
+    width: 68px !important;
+    height: 68px !important;
+    font-size: 1.7rem !important;
+    margin-bottom: 18px !important;
+  }
+
+  /* --- Why Partner With Us --- */
+  .partner-section {
+    padding: 60px 32px !important;
+    min-height: auto !important;
+    overflow: hidden !important;
+  }
+
+  .partner-heading {
+    margin-bottom: 32px !important;
+  }
+
+  .partner-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .partner-card {
+    min-width: 0 !important;
+    padding: 30px 22px !important;
+  }
+
+  .partner-card-icon {
+    font-size: 2.2rem !important;
+    margin-bottom: 18px !important;
+  }
+
+  /* --- Sponsorship Tiers Section --- */
+  .sponsorship-section {
+    padding: 50px 32px !important;
+    min-height: auto !important;
+  }
+
+  .sponsorship-heading {
+    margin-bottom: 28px !important;
+  }
+
+  .tier-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+
+  .tier-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 30px 24px !important;
+  }
+
+  .tier-header {
+    margin-bottom: 16px !important;
+  }
+
+  .tier-price {
+    margin-bottom: 14px !important;
+  }
+
+  /* --- Sponsorship Benefits Section --- */
+  .benefits-section {
+    padding: 60px 32px !important;
+  }
+
+  .benefits-heading {
+    margin-bottom: 32px !important;
+  }
+
+  .benefits-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  .benefit-card {
+    padding: 22px 12px 18px !important;
+    min-width: 0 !important;
+  }
+
+  .benefit-icon {
+    width: 54px !important;
+    height: 54px !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* --- For Sponsorship Section --- */
+  .for-sponsorship-section {
+    padding: 60px 32px !important;
+    overflow: hidden !important;
+  }
+
+  .sponsorship-center {
+    max-width: 100% !important;
+  }
+
+  /* --- Footer --- */
+  .site-footer {
+    padding-top: 48px !important;
+  }
+
+  .footer-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 36px 24px !important;
+    padding: 0 32px 48px 32px !important;
+    max-width: 100% !important;
+  }
+
+  .footer-col {
+    padding: 0 !important;
+    border-left: none !important;
+  }
+
+  .footer-bottom {
+    padding: 18px 32px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. MOBILE BREAKPOINT (max-width: 768px)
+   Covers standard smartphones, portrait orientation, phablets
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Section Scroll Margin */
+  section[id],
+  div[id].hero-wrapper,
+  .about-section,
+  .speaker-section,
+  .highlights-section,
+  .event-details-section,
+  .partner-section,
+  .sponsorship-section,
+  .benefits-section,
+  .for-sponsorship-section {
+    scroll-margin-top: 76px !important;
+  }
+
+  /* --- Sticky/Fixed Header on Mobile --- */
+  .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+  }
+
+  .site-header .navbar {
+    padding: 14px 24px !important;
+  }
+
+  .nav-logos {
+    gap: 10px !important;
+  }
+
+  .nav-logos img {
+    height: 36px !important;
+  }
+
+  .nav-logos .detox-logo {
+    height: 44px !important;
+  }
+
+  .divider {
+    height: 24px !important;
+  }
+
+  .nav-right .nav-btn {
+    display: none !important;
+  }
+
+  .nav-links {
+    top: 64px !important;
+    max-height: calc(100vh - 64px) !important;
+    padding: 24px 18px calc(32px + env(safe-area-inset-bottom, 0px)) 18px !important;
+    gap: 12px !important;
+  }
+
+  .nav-links li a {
+    font-size: 15px !important;
+    padding: 10px 14px !important;
+  }
+
+  /* --- Hero Section --- */
+  .hero-wrapper {
+    /* Fixed header compensation: 64px header height + 18px spacing */
+    padding: calc(64px + 18px) 18px 40px 18px !important;
+  }
+
+  .k-initiative {
+    font-size: 10px !important;
+    letter-spacing: 0.9px !important;
+    margin-bottom: 14px !important;
+    gap: 8px !important;
+  }
+
+  .k-initiative .line {
+    width: 20px !important;
+  }
+
+  .hero-logos {
+    gap: 14px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .hero-logos img {
+    height: 40px !important;
+  }
+
+  .hero-logos .detox-logo {
+    height: 50px !important;
+  }
+
+  .hero-logos .divider {
+    height: 28px !important;
+  }
+
+  .main-heading {
+    font-size: clamp(2.2rem, 8.5vw, 3.2rem) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .main-heading .gradient-text {
+    font-size: clamp(1.8rem, 7vw, 2.6rem) !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  .sub-heading {
+    font-size: clamp(1.15rem, 4.4vw, 1.6rem) !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .tagline {
+    font-size: clamp(0.95rem, 3.6vw, 1.15rem) !important;
+    margin: 0 0 16px 0 !important;
+  }
+
+  /* Hero Image on Mobile */
+  .hero-image {
+    max-height: 320px !important;
+    margin: 4px 0 16px 0 !important;
+  }
+
+  .person-img {
+    max-height: 300px !important;
+  }
+
+  .image-glow {
+    width: 240px !important;
+    height: 240px !important;
+  }
+
+  .neon-light {
+    display: none !important;
+  }
+
+  /* Info Bar - Vertical Stack of Glass Cards */
+  .info-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 18px 16px !important;
+    gap: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .info-item {
+    flex: none !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
+    padding-bottom: 12px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    gap: 14px !important;
+  }
+
+  .info-item:last-child {
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+  }
+
+  .info-item i {
+    font-size: 1.8rem !important;
+    margin-right: 0 !important;
+    min-width: 32px !important;
+    text-align: center !important;
+  }
+
+  .info-text .label {
+    font-size: 11.5px !important;
+  }
+
+  .info-text .value {
+    font-size: 15.5px !important;
+    line-height: 1.35 !important;
+  }
+
+  .info-text .bold-white {
+    font-size: 14.5px !important;
+  }
+
+  /* Hero CTAs */
+  .hero-ctas {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-ctas .btn {
+    width: 100% !important;
+    padding: 14px 20px !important;
+    justify-content: center !important;
+  }
+
+  /* --- About Section --- */
+  .about-section {
+    padding: 48px 18px !important;
+    margin: 24px auto 0 !important;
+  }
+
+  .about-glow {
+    width: 260px !important;
+    height: 260px !important;
+  }
+
+  .about-container {
+    gap: 24px !important;
+  }
+
+  .about-text {
+    line-height: 1.65 !important;
+  }
+
+  .about-image {
+    border-top-left-radius: 28px !important;
+    border-radius: 18px !important;
+  }
+
+  /* --- Keynote Speaker Section --- */
+  .speaker-section {
+    padding: 48px 18px !important;
+    margin: 36px 0 0 !important;
+  }
+
+  .speaker-container {
+    gap: 30px !important;
+  }
+
+  .speaker-details {
+    max-width: 100% !important;
+    gap: 14px !important;
+  }
+
+  .speaker-details .detail-item {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    padding: 14px 16px !important;
+    border-radius: 14px !important;
+    gap: 14px !important;
+  }
+
+  .speaker-details .detail-icon {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .speaker-glow-bg {
+    width: 210px !important;
+    height: 210px !important;
+  }
+
+  .speaker-image {
+    max-width: 200px !important;
+  }
+
+  /* --- Highlights Section --- */
+  .highlights-section {
+    padding: 48px 18px !important;
+    background-position: 70% center !important;
+  }
+
+  .highlights-list {
+    gap: 20px !important;
+  }
+
+  .highlight-item {
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+
+  .highlight-icon {
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+    font-size: 1.35rem !important;
+  }
+
+  /* --- Event Details Section --- */
+  .event-details-section {
+    padding: 48px 18px !important;
+    margin: 20px auto !important;
+  }
+
+  .event-cards {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 14px !important;
+  }
+
+  .event-card {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 26px 18px !important;
+    border-radius: 16px !important;
+  }
+
+  .event-card-icon {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* --- Why Partner With Us --- */
+  .partner-section {
+    padding: 48px 18px !important;
+    margin: 24px auto 0 !important;
+  }
+
+  .partner-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .partner-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    padding: 24px 18px !important;
+    border-radius: 14px !important;
+  }
+
+  .partner-card-icon {
+    font-size: 1.8rem !important;
+    margin-bottom: 14px !important;
+  }
+
+  .partner-card-title {
+    margin-bottom: 8px !important;
+  }
+
+  /* --- Sponsorship Tiers Section --- */
+  .sponsorship-section {
+    padding: 40px 18px !important;
+  }
+
+  .tier-cards {
+    gap: 18px !important;
+  }
+
+  .tier-card {
+    padding: 24px 18px !important;
+    border-radius: 14px !important;
+  }
+
+  .tier-header {
+    gap: 12px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .tier-badge {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1.1rem !important;
+  }
+
+  .tier-price {
+    margin-bottom: 12px !important;
+  }
+
+  .tier-features {
+    gap: 10px !important;
+  }
+
+  .tier-features li {
+    gap: 10px !important;
+  }
+
+  .tier-features li i {
+    font-size: 0.95rem !important;
+    margin-top: 2px !important;
+  }
+
+  /* --- Sponsorship Benefits Section --- */
+  .benefits-section {
+    padding: 48px 18px !important;
+  }
+
+  .benefits-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .benefit-card {
+    padding: 18px 10px 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .benefit-icon {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 10px !important;
+    border-radius: 10px !important;
+  }
+
+  /* --- For Sponsorship / Contact Section --- */
+  .for-sponsorship-section {
+    padding: 48px 18px !important;
+  }
+
+  .sponsorship-contact-list {
+    width: 100% !important;
+    gap: 14px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .sponsorship-contact-item {
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .sponsorship-contact-item a {
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .sponsorship-icon-circle {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    font-size: 0.88rem !important;
+  }
+
+  .sponsorship-info-pill {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding: 14px 16px !important;
+    width: 100% !important;
+    border-radius: 14px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .pill-divider {
+    display: none !important;
+  }
+
+  .sponsorship-cta {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 14px 20px !important;
+  }
+
+  /* --- Footer --- */
+  .site-footer {
+    padding-top: 40px !important;
+  }
+
+  .footer-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    padding: 0 18px 36px 18px !important;
+  }
+
+  .footer-logos {
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 16px !important;
+  }
+
+  .footer-logos img {
+    height: 36px !important;
+  }
+
+  .footer-logos .detox-logo {
+    height: 44px !important;
+  }
+
+  .footer-divider {
+    height: 24px !important;
+  }
+
+  .footer-description {
+    margin-bottom: 20px !important;
+  }
+
+  .footer-socials {
+    gap: 10px !important;
+  }
+
+  .social-circle {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .footer-title-underline {
+    margin-bottom: 16px !important;
+  }
+
+  .footer-links-list {
+    gap: 10px !important;
+  }
+
+  .footer-links-list li a {
+    padding: 4px 0 !important;
+  }
+
+  .footer-contact-list {
+    gap: 14px !important;
+  }
+
+  .footer-contact-item {
+    gap: 12px !important;
+  }
+
+  .footer-contact-item a {
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .footer-icon-circle {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .newsletter-text {
+    margin-bottom: 14px !important;
+  }
+
+  /* iOS Auto-zoom prevention on form inputs */
+  .newsletter-input-wrapper input {
+    font-size: 16px !important;
+  }
+
+  .footer-bottom {
+    padding: 16px 18px calc(16px + env(safe-area-inset-bottom, 0px)) 18px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. SMALL MOBILE BREAKPOINT (max-width: 480px)
+   Covers compact smartphones (iPhone SE, Galaxy A-series, small Androids)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+
+  /* Section Scroll Margin */
+  section[id],
+  div[id].hero-wrapper,
+  .about-section,
+  .speaker-section,
+  .highlights-section,
+  .event-details-section,
+  .partner-section,
+  .sponsorship-section,
+  .benefits-section,
+  .for-sponsorship-section {
+    scroll-margin-top: 66px !important;
+  }
+
+  /* Header */
+  .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+  }
+
+  .site-header .navbar {
+    padding: 8px 14px !important;
+  }
+
+  .nav-logos {
+    gap: 8px !important;
+  }
+
+  .nav-logos img {
+    height: 30px !important;
+  }
+
+  .nav-logos .detox-logo {
+    height: 36px !important;
+  }
+
+  .divider {
+    height: 20px !important;
+  }
+
+  .nav-toggle {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 6px !important;
+  }
+
+  .hamburger-bar {
+    width: 19px !important;
+  }
+
+  .nav-links {
+    top: 53px !important;
+    max-height: calc(100vh - 53px) !important;
+    padding: 20px 14px calc(28px + env(safe-area-inset-bottom, 0px)) 14px !important;
+  }
+
+  /* Hero Section */
+  .hero-wrapper {
+    padding: calc(53px + 16px) 14px 36px 14px !important;
+  }
+
+  .k-initiative {
+    font-size: 9px !important;
+    letter-spacing: 0.6px !important;
+  }
+
+  .hero-logos {
+    gap: 10px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-logos img {
+    height: 32px !important;
+  }
+
+  .hero-logos .detox-logo {
+    height: 40px !important;
+  }
+
+  .hero-logos .divider {
+    height: 22px !important;
+  }
+
+  .main-heading {
+    font-size: clamp(1.9rem, 8vw, 2.5rem) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .main-heading .gradient-text {
+    font-size: clamp(1.5rem, 6.5vw, 2.1rem) !important;
+  }
+
+  .sub-heading {
+    font-size: clamp(1.05rem, 4.2vw, 1.35rem) !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .tagline {
+    font-size: 0.95rem !important;
+  }
+
+  .hero-image {
+    max-height: 260px !important;
+  }
+
+  .person-img {
+    max-height: 250px !important;
+  }
+
+  .info-bar {
+    padding: 14px 12px !important;
+  }
+
+  .info-item {
+    gap: 12px !important;
+  }
+
+  .info-item i {
+    font-size: 1.6rem !important;
+    min-width: 28px !important;
+  }
+
+  .info-text .label {
+    font-size: 11px !important;
+  }
+
+  .info-text .value {
+    font-size: 14.5px !important;
+  }
+
+  .hero-ctas .btn {
+    padding: 12px 16px !important;
+    font-size: 13.5px !important;
+  }
+
+  /* About */
+  .about-section {
+    padding: 40px 14px !important;
+  }
+
+  .about-glow {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  .about-heading {
+    font-size: 24px !important;
+  }
+
+  .about-image {
+    border-radius: 14px !important;
+  }
+
+  /* Speaker */
+  .speaker-section {
+    padding: 40px 14px !important;
+  }
+
+  .speaker-heading {
+    font-size: 24px !important;
+  }
+
+  .speaker-name {
+    font-size: 19px !important;
+  }
+
+  .speaker-glow-bg {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .speaker-image {
+    max-width: 170px !important;
+  }
+
+  /* Highlights */
+  .highlights-section {
+    padding: 40px 14px !important;
+  }
+
+  .highlights-heading {
+    font-size: 24px !important;
+  }
+
+  .highlight-icon {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    font-size: 1.2rem !important;
+  }
+
+  /* Event Details */
+  .event-details-section {
+    padding: 40px 14px !important;
+  }
+
+  .event-details-heading {
+    font-size: 24px !important;
+  }
+
+  .event-card {
+    padding: 22px 14px !important;
+  }
+
+  /* Partner */
+  .partner-section {
+    padding: 40px 14px !important;
+  }
+
+  .partner-heading {
+    font-size: 24px !important;
+  }
+
+  .partner-card {
+    padding: 20px 14px !important;
+  }
+
+  /* Sponsorship Tiers */
+  .sponsorship-section {
+    padding: 36px 14px !important;
+  }
+
+  .sponsorship-heading {
+    font-size: 24px !important;
+  }
+
+  .tier-card {
+    padding: 20px 14px !important;
+  }
+
+  .tier-price {
+    font-size: 22px !important;
+  }
+
+  /* Benefits */
+  .benefits-section {
+    padding: 40px 14px !important;
+  }
+
+  .benefits-heading {
+    font-size: 24px !important;
+  }
+
+  .benefits-grid {
+    gap: 10px !important;
+  }
+
+  .benefit-card {
+    padding: 14px 8px 12px !important;
+  }
+
+  .benefit-icon {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.15rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .benefit-label {
+    font-size: 12px !important;
+  }
+
+  /* Contact */
+  .for-sponsorship-section {
+    padding: 40px 14px !important;
+  }
+
+  .sponsorship-contact-heading {
+    font-size: 24px !important;
+  }
+
+  .sponsorship-contact-item {
+    font-size: 12.5px !important;
+  }
+
+  .sponsorship-icon-circle {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+
+  /* Footer */
+  .footer-container {
+    padding: 0 14px 32px 14px !important;
+  }
+
+  .footer-logos img {
+    height: 30px !important;
+  }
+
+  .footer-logos .detox-logo {
+    height: 38px !important;
+  }
+
+  .footer-divider {
+    height: 20px !important;
+  }
+
+  .footer-bottom {
+    padding: 14px 14px calc(14px + env(safe-area-inset-bottom, 0px)) 14px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. ULTRA-COMPACT MOBILE BREAKPOINT (max-width: 360px)
+   Covers Samsung Galaxy Fold cover screen, iPhone 5/SE (1st Gen), etc.
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+  }
+
+  .site-header .navbar {
+    padding: 8px 10px !important;
+  }
+
+  .nav-logos {
+    gap: 6px !important;
+  }
+
+  .nav-logos img {
+    height: 26px !important;
+  }
+
+  .nav-logos .detox-logo {
+    height: 32px !important;
+  }
+
+  .divider {
+    height: 18px !important;
+  }
+
+  .hero-wrapper {
+    padding: calc(49px + 14px) 10px 30px 10px !important;
+  }
+
+  .nav-links {
+    top: 49px !important;
+    max-height: calc(100vh - 49px) !important;
+  }
+
+  .main-heading {
+    font-size: 1.85rem !important;
+  }
+
+  .main-heading .gradient-text {
+    font-size: 1.45rem !important;
+  }
+
+  .sub-heading {
+    font-size: 1rem !important;
+  }
+
+  .hero-logos img {
+    height: 28px !important;
+  }
+
+  .hero-logos .detox-logo {
+    height: 34px !important;
+  }
+
+  .hero-logos .divider {
+    height: 18px !important;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .benefit-card {
+    padding: 12px 6px 10px !important;
+  }
+
+  .benefit-label {
+    font-size: 11px !important;
+  }
+
+  .btn {
+    padding: 11px 14px !important;
+    font-size: 13px !important;
+  }
+}
