@@ -670,6 +670,24 @@
     padding: 10px 14px !important;
   }
 
+  .mobile-nav-btn-item {
+    display: block !important;
+    margin-top: 10px !important;
+    width: 100% !important;
+  }
+
+  .nav-links li a.mobile-nav-btn {
+    background: var(--gradient-btn) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+  }
+
+  .nav-links li a.mobile-nav-btn:hover {
+    box-shadow: 0 5px 15px var(--glow-pink) !important;
+  }
+
   /* --- Hero Section --- */
   .hero-wrapper {
     /* Fixed header compensation: 64px header height + 18px spacing */
