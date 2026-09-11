@@ -2425,3 +2425,564 @@ a {
     font-weight: 600 !important;
   }
 }
+
+/* =============================================
+   Sponsor Inquiry Modal
+   ============================================= */
+
+/* Overlay */
+.sponsor-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 4, 12, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  padding: 20px;
+}
+
+.sponsor-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Container */
+.sponsor-modal {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  max-height: 90vh;
+  background: linear-gradient(145deg, rgba(12, 15, 35, 0.97), rgba(6, 9, 22, 0.98));
+  border: 1px solid rgba(71, 75, 255, 0.2);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.7),
+    0 0 60px rgba(231, 28, 154, 0.08),
+    0 0 100px rgba(71, 75, 255, 0.06);
+  transform: translateY(30px) scale(0.97);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sponsor-modal-overlay.active .sponsor-modal {
+  transform: translateY(0) scale(1);
+}
+
+/* Close Button */
+.sponsor-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #cdd1e4;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.sponsor-modal-close:hover {
+  background: rgba(231, 28, 154, 0.15);
+  border-color: rgba(231, 28, 154, 0.5);
+  color: white;
+  transform: rotate(90deg);
+}
+
+/* Modal Header */
+.sponsor-modal-header {
+  padding: 36px 40px 20px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sponsor-modal-accent-bar {
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, #e71c9a, #474BFF);
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+
+.sponsor-modal-title {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 10px 0;
+}
+
+.sponsor-modal-title .white-text {
+  color: white;
+}
+
+.sponsor-modal-title .gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sponsor-modal-subtitle {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+  max-width: 520px;
+}
+
+/* Modal Body — Scrollable */
+.sponsor-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 40px 36px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(71, 75, 255, 0.3) transparent;
+}
+
+.sponsor-modal-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sponsor-modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sponsor-modal-body::-webkit-scrollbar-thumb {
+  background: rgba(71, 75, 255, 0.3);
+  border-radius: 10px;
+}
+
+.sponsor-modal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 75, 255, 0.5);
+}
+
+/* Form Sections */
+.sponsor-form-section {
+  margin-bottom: 28px;
+}
+
+.sponsor-form-section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #cdd1e4;
+  margin-bottom: 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sponsor-form-section-label i {
+  font-size: 0.85rem;
+  background: linear-gradient(135deg, #e71c9a, #474BFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.optional-badge {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  background: rgba(71, 75, 255, 0.1);
+  border: 1px solid rgba(71, 75, 255, 0.2);
+  border-radius: 20px;
+  padding: 3px 12px;
+  margin-left: auto;
+  text-transform: none;
+}
+
+/* Form Layout */
+.sponsor-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.sponsor-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sponsor-form-group.full-width {
+  margin-bottom: 18px;
+}
+
+/* Labels */
+.sponsor-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #cdd1e4;
+  letter-spacing: 0.3px;
+}
+
+.required-star {
+  color: #e71c9a;
+  font-weight: 700;
+}
+
+/* Inputs & Selects */
+.sponsor-form-group input,
+.sponsor-form-group textarea,
+.sponsor-form-group select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: white;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.sponsor-form-group input::placeholder,
+.sponsor-form-group textarea::placeholder {
+  color: #5a6084;
+}
+
+.sponsor-form-group input:focus,
+.sponsor-form-group textarea:focus,
+.sponsor-form-group select:focus {
+  border-color: rgba(231, 28, 154, 0.5);
+  box-shadow: 0 0 20px rgba(231, 28, 154, 0.12), 0 0 6px rgba(71, 75, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sponsor-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Phone Input */
+.phone-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  overflow: hidden;
+}
+
+.phone-input-wrapper:focus-within {
+  border-color: rgba(231, 28, 154, 0.5);
+  box-shadow: 0 0 20px rgba(231, 28, 154, 0.12), 0 0 6px rgba(71, 75, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.phone-prefix {
+  padding: 13px 0 13px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #8b92b2;
+  font-family: var(--font-body);
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding-right: 12px;
+  margin-right: 2px;
+}
+
+.phone-input-wrapper input {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding-left: 12px !important;
+}
+
+/* Custom Select Dropdown */
+.custom-select-wrapper {
+  position: relative;
+}
+
+.custom-select-wrapper select {
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.custom-select-wrapper select option {
+  background: #0c0f23;
+  color: white;
+  padding: 10px;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: #5a6084;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.custom-select-wrapper:focus-within .select-arrow {
+  color: #e71c9a;
+}
+
+/* Submit Area */
+.sponsor-form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sponsor-submit-btn {
+  width: 100%;
+  padding: 16px 30px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  border-radius: 14px !important;
+  gap: 10px;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sponsor-submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.sponsor-submit-btn:hover::before {
+  left: 100%;
+}
+
+.sponsor-form-note {
+  font-size: 12px;
+  color: #5a6084;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.sponsor-form-note i {
+  font-size: 0.7rem;
+  color: #474BFF;
+}
+
+/* Success State */
+.sponsor-modal-success {
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.success-icon-wrapper {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(231, 28, 154, 0.15), rgba(71, 75, 255, 0.15));
+  border: 2px solid rgba(231, 28, 154, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: successPulse 2s ease-in-out infinite;
+}
+
+.success-icon-wrapper i {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #e71c9a, #474BFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes successPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(231, 28, 154, 0.2); }
+  50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(231, 28, 154, 0.15); }
+}
+
+.success-title {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.success-text {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0;
+}
+
+.sponsor-success-close {
+  margin-top: 10px;
+  padding: 14px 40px !important;
+  border-radius: 14px !important;
+}
+
+/* Tier CTA Buttons inside tier cards */
+.tier-cta-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 13px 20px !important;
+  font-size: 14px !important;
+  border-radius: 12px !important;
+  letter-spacing: 0.3px;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+/* Gold tier button */
+.gold-tier .tier-cta-btn {
+  background: linear-gradient(135deg, #FFD700, #D4AF37, #B8860B);
+  color: #1a1200;
+}
+.gold-tier .tier-cta-btn:hover {
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.35);
+}
+
+/* Silver tier button */
+.silver-tier .tier-cta-btn {
+  background: linear-gradient(135deg, #E8E8E8, #C0C0C0, #A8A8A8);
+  color: #1a1a2e;
+}
+.silver-tier .tier-cta-btn:hover {
+  box-shadow: 0 8px 25px rgba(192, 192, 192, 0.35);
+}
+
+/* Bronze tier button */
+.bronze-tier .tier-cta-btn {
+  background: linear-gradient(135deg, #E3A869, #CD7F32, #A0522D);
+  color: #1a1000;
+}
+.bronze-tier .tier-cta-btn:hover {
+  box-shadow: 0 8px 25px rgba(205, 127, 50, 0.35);
+}
+
+/* Body scroll lock when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* =============================================
+   Sponsor Modal — Responsive
+   ============================================= */
+@media (max-width: 768px) {
+  .sponsor-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .sponsor-modal {
+    max-height: 95vh;
+    border-radius: 24px 24px 0 0;
+    max-width: 100%;
+  }
+
+  .sponsor-modal-header {
+    padding: 28px 24px 16px;
+  }
+
+  .sponsor-modal-title {
+    font-size: 24px !important;
+  }
+
+  .sponsor-modal-subtitle {
+    font-size: 13px;
+  }
+
+  .sponsor-modal-body {
+    padding: 20px 24px 30px;
+  }
+
+  .sponsor-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .sponsor-form-group {
+    margin-bottom: 16px;
+  }
+
+  .sponsor-modal-close {
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .sponsor-modal-success {
+    padding: 50px 24px;
+  }
+
+  .success-title {
+    font-size: 24px;
+  }
+
+  .success-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-modal-header {
+    padding: 24px 20px 14px;
+  }
+
+  .sponsor-modal-body {
+    padding: 16px 20px 24px;
+  }
+
+  .sponsor-form-section-label {
+    font-size: 12px;
+  }
+
+  .sponsor-form-group label {
+    font-size: 12px;
+  }
+
+  .sponsor-form-group input,
+  .sponsor-form-group textarea,
+  .sponsor-form-group select {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+}

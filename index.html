@@ -103,7 +103,7 @@
             <!-- Call to Actions -->
             <div class="hero-ctas">
                 <a href="#contact" class="btn btn-gradient hover-effect">Register Now <i class="fa-solid fa-chevron-right icon-sm"></i></a>
-                <a href="#sponsorship" class="btn btn-outline hover-effect">Become a Sponsor <i class="fa-solid fa-chevron-right icon-sm"></i></a>
+                <button class="btn btn-outline hover-effect sponsor-trigger" data-tier="">Become a Sponsor <i class="fa-solid fa-chevron-right icon-sm"></i></button>
             </div>
         </div>
     </div>
@@ -335,6 +335,7 @@
                             <div>Social Media Campaign +<br>5 Passes</div>
                         </li>
                     </ul>
+                    <button class="btn btn-gradient tier-cta-btn sponsor-trigger" data-tier="gold">Become a Sponsor <i class="fa-solid fa-chevron-right icon-sm"></i></button>
                 </div>
 
                 <!-- SILVER Tier -->
@@ -367,6 +368,7 @@
                             <div>Social Media Mentions +<br>3 Passes</div>
                         </li>
                     </ul>
+                    <button class="btn btn-gradient tier-cta-btn sponsor-trigger" data-tier="silver">Become a Sponsor <i class="fa-solid fa-chevron-right icon-sm"></i></button>
                 </div>
 
                 <!-- BRONZE Tier -->
@@ -396,6 +398,7 @@
                             <div>Social Media Mentions +<br>2 Passes</div>
                         </li>
                     </ul>
+                    <button class="btn btn-gradient tier-cta-btn sponsor-trigger" data-tier="bronze">Become a Sponsor <i class="fa-solid fa-chevron-right icon-sm"></i></button>
                 </div>
             </div>
         </div>
@@ -634,6 +637,153 @@
             </div>
         </div>
     </footer>
+
+    <!-- Sponsor Inquiry Modal -->
+    <div class="sponsor-modal-overlay" id="sponsor-modal-overlay">
+        <div class="sponsor-modal" id="sponsor-modal" role="dialog" aria-modal="true" aria-labelledby="sponsor-modal-title">
+            <!-- Close Button -->
+            <button class="sponsor-modal-close" id="sponsor-modal-close" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="sponsor-modal-header">
+                <div class="sponsor-modal-accent-bar"></div>
+                <h2 class="sponsor-modal-title" id="sponsor-modal-title">
+                    <span class="white-text">Become a</span> <span class="gradient-text">Sponsor</span>
+                </h2>
+                <p class="sponsor-modal-subtitle">Partner with DE TOX and showcase your brand to top architects, interior designers & builders.</p>
+            </div>
+
+            <!-- Modal Body (Scrollable) -->
+            <div class="sponsor-modal-body">
+                <form class="sponsor-form" id="sponsor-form" onsubmit="event.preventDefault(); handleSponsorSubmit();">
+
+                    <!-- Section: Core Details -->
+                    <div class="sponsor-form-section">
+                        <div class="sponsor-form-section-label">
+                            <i class="fa-solid fa-user-tie"></i> Contact Details
+                        </div>
+
+                        <div class="sponsor-form-row">
+                            <div class="sponsor-form-group">
+                                <label for="sponsor-name">Full Name <span class="required-star">*</span></label>
+                                <input type="text" id="sponsor-name" name="fullName" placeholder="Your full name" required>
+                            </div>
+                            <div class="sponsor-form-group">
+                                <label for="sponsor-company">Company / Brand Name <span class="required-star">*</span></label>
+                                <input type="text" id="sponsor-company" name="companyName" placeholder="Company or brand" required>
+                            </div>
+                        </div>
+
+                        <div class="sponsor-form-row">
+                            <div class="sponsor-form-group">
+                                <label for="sponsor-designation">Designation <span class="required-star">*</span></label>
+                                <input type="text" id="sponsor-designation" name="designation" placeholder="e.g., Director, Marketing Head" required>
+                            </div>
+                            <div class="sponsor-form-group">
+                                <label for="sponsor-email">Email Address <span class="required-star">*</span></label>
+                                <input type="email" id="sponsor-email" name="email" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="sponsor-form-row">
+                            <div class="sponsor-form-group">
+                                <label for="sponsor-phone">Phone Number <span class="required-star">*</span></label>
+                                <div class="phone-input-wrapper">
+                                    <span class="phone-prefix">+91</span>
+                                    <input type="tel" id="sponsor-phone" name="phone" placeholder="WhatsApp-enabled preferred" required>
+                                </div>
+                            </div>
+                            <div class="sponsor-form-group">
+                                <label for="sponsor-tier">Sponsorship Tier <span class="required-star">*</span></label>
+                                <div class="custom-select-wrapper">
+                                    <select id="sponsor-tier" name="sponsorshipTier" required>
+                                        <option value="" disabled>Select a tier</option>
+                                        <option value="gold">🥇 Gold — Title Sponsor (₹5 Lakhs)</option>
+                                        <option value="silver">🥈 Silver — Associate Sponsor (₹3 Lakhs)</option>
+                                        <option value="bronze">🥉 Bronze — Associate Sponsor (₹2 Lakhs)</option>
+                                        <option value="not-sure" selected>Not sure yet — Let's discuss</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-arrow"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section: Additional Info -->
+                    <div class="sponsor-form-section">
+                        <div class="sponsor-form-section-label">
+                            <i class="fa-solid fa-building"></i> Additional Information
+                            <span class="optional-badge">Optional</span>
+                        </div>
+
+                        <div class="sponsor-form-row">
+                            <div class="sponsor-form-group">
+                                <label for="sponsor-industry">Industry / Business Type</label>
+                                <div class="custom-select-wrapper">
+                                    <select id="sponsor-industry" name="industry">
+                                        <option value="" disabled selected>Select your industry</option>
+                                        <option value="architecture">Architecture Firm</option>
+                                        <option value="interior-design">Interior Design</option>
+                                        <option value="builder-construction">Builder & Construction</option>
+                                        <option value="material-supplier">Material Supplier</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-arrow"></i>
+                                </div>
+                            </div>
+                            <div class="sponsor-form-group">
+                                <label for="sponsor-city">City / Location</label>
+                                <input type="text" id="sponsor-city" name="city" placeholder="e.g., Kochi, Mumbai">
+                            </div>
+                        </div>
+
+                        <div class="sponsor-form-group full-width">
+                            <label for="sponsor-message">Message / Specific Requirements</label>
+                            <textarea id="sponsor-message" name="message" rows="3" placeholder="Any specific requirements, custom package ideas, or questions..."></textarea>
+                        </div>
+
+                        <div class="sponsor-form-group full-width">
+                            <label for="sponsor-source">How did you hear about DE TOX?</label>
+                            <div class="custom-select-wrapper">
+                                <select id="sponsor-source" name="source">
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="magazine">Designer Plus Builder Magazine</option>
+                                    <option value="social-media">Social Media</option>
+                                    <option value="referral">Referral</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Area -->
+                    <div class="sponsor-form-actions">
+                        <button type="submit" class="btn btn-gradient sponsor-submit-btn" id="sponsor-submit-btn">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Inquiry
+                        </button>
+                        <p class="sponsor-form-note">
+                            <i class="fa-solid fa-lock"></i> Your information is secure and will only be used for sponsorship communication.
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Success State -->
+            <div class="sponsor-modal-success" id="sponsor-modal-success" style="display: none;">
+                <div class="success-icon-wrapper">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3 class="success-title">Thank You!</h3>
+                <p class="success-text">Your sponsorship inquiry has been submitted successfully. Our team will reach out to you within 24 hours.</p>
+                <button class="btn btn-gradient sponsor-success-close" onclick="closeSponsorModal()">
+                    <i class="fa-solid fa-check"></i> Done
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/scroll-reveal.js"></script>

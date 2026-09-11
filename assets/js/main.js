@@ -197,3 +197,145 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', requestActiveUpdate, { passive: true });
     updateActiveNavLink();
 });
+
+/**
+ * Sponsor Inquiry Modal
+ * Opens from any .sponsor-trigger button, pre-selects tier via data-tier attribute.
+ * Submits form data to Google Sheets via Apps Script.
+ */
+(function () {
+    // ⚡ PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW
+    const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwRzjNMxCi6xR52oiRJgyHnGvGMd0IX7Pl5gnN3Qfau8nUpFicQvPSv9prNgGhSMV4W/exec';
+
+    const overlay = document.getElementById('sponsor-modal-overlay');
+    const modal = document.getElementById('sponsor-modal');
+    const closeBtn = document.getElementById('sponsor-modal-close');
+    const form = document.getElementById('sponsor-form');
+    const tierSelect = document.getElementById('sponsor-tier');
+    const modalBody = document.querySelector('.sponsor-modal-body');
+    const successPanel = document.getElementById('sponsor-modal-success');
+
+    if (!overlay || !modal) return;
+
+    // Open modal
+    function openSponsorModal(tier) {
+        // Reset form and show form, hide success
+        form.reset();
+        modalBody.style.display = '';
+        modal.querySelector('.sponsor-modal-header').style.display = '';
+        successPanel.style.display = 'none';
+
+        // Pre-select tier if provided
+        if (tier && tierSelect) {
+            const option = tierSelect.querySelector(`option[value="${tier}"]`);
+            if (option) {
+                tierSelect.value = tier;
+            }
+        } else {
+            tierSelect.value = 'not-sure';
+        }
+
+        // Show modal
+        overlay.classList.add('active');
+        document.body.classList.add('modal-open');
+
+        // Focus first input after animation
+        setTimeout(() => {
+            const firstInput = form.querySelector('input');
+            if (firstInput) firstInput.focus();
+        }, 400);
+    }
+
+    // Close modal
+    function closeSponsorModal() {
+        overlay.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    }
+
+    // Make closeSponsorModal globally accessible (used by inline onclick)
+    window.closeSponsorModal = closeSponsorModal;
+
+    // Wire up all trigger buttons
+    document.querySelectorAll('.sponsor-trigger').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const tier = btn.getAttribute('data-tier') || '';
+            openSponsorModal(tier);
+        });
+    });
+
+    // Close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeSponsorModal);
+    }
+
+    // Close on overlay click (outside modal)
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            closeSponsorModal();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            closeSponsorModal();
+        }
+    });
+
+    // Handle form submission → Google Sheets
+    window.handleSponsorSubmit = async function () {
+        const submitBtn = document.getElementById('sponsor-submit-btn');
+
+        // Basic validation check
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        // Collect form data
+        const formData = {
+            fullName: document.getElementById('sponsor-name').value.trim(),
+            companyName: document.getElementById('sponsor-company').value.trim(),
+            designation: document.getElementById('sponsor-designation').value.trim(),
+            email: document.getElementById('sponsor-email').value.trim(),
+            phone: document.getElementById('sponsor-phone').value.trim(),
+            sponsorshipTier: document.getElementById('sponsor-tier').value,
+            industry: document.getElementById('sponsor-industry').value || '',
+            city: document.getElementById('sponsor-city').value.trim(),
+            message: document.getElementById('sponsor-message').value.trim(),
+            source: document.getElementById('sponsor-source').value || ''
+        };
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+
+        try {
+            // POST to Google Apps Script
+            const response = await fetch(GOOGLE_SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Required for Apps Script
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            // With no-cors, we can't read the response, but if fetch didn't throw, it succeeded
+            // Hide form, show success
+            modalBody.style.display = 'none';
+            modal.querySelector('.sponsor-modal-header').style.display = 'none';
+            successPanel.style.display = 'flex';
+
+        } catch (error) {
+            console.error('Form submission error:', error);
+            alert('Something went wrong. Please try again or contact us directly at events@designerpublications.com');
+        } finally {
+            // Reset button state for next time
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Submit Inquiry';
+        }
+    };
+})();
